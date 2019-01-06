@@ -1,0 +1,22 @@
+<div class="jumbotron">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-5 col-md-offset-5">
+        <h4 *ngIf = 'code' style="color:#a94442;padding-top:20px">{{code}}</h4>
+        <h4 *ngIf = '!code' style="color:#31708f;padding-top:20px">Oops!</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf = 'code' class="alert alert-danger fade in">
+  <a href="#" class="close" data-dismiss="alert">&times;</a>
+  <strong *ngIf = 'code == "503 ERROR"'>This service is currently unavailable. Please try again later.</strong>
+  <strong *ngIf = 'code == "404 ERROR"'>The page you requested doesn't exist.</strong>
+  <strong *ngIf = 'code == "400 ERROR"'>Bad request. This could not be understood by the server.</strong>
+  <strong *ngIf = 'code !== "503 ERROR" && code !== "404 ERROR" && code !== "400 ERROR"'>{{errMsg}}</strong>
+</div>
+
+<div *ngIf = '!code' class="alert alert-info">
+  {{errMsg}}<a href="collection" class="alert-link" data-dismiss="alert"> Click here to view the book collection.</a>
+  <strong></strong>
+</div>

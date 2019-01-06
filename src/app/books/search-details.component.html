@@ -1,0 +1,60 @@
+<body *ngIf="setFlag" class="bodyPadding">
+    <div *ngFor="let data of empData" class="panel panel-primary centerAlign pointerCursor verticalAlign" (click)="bookDetails(data)">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{data['volumeInfo'].title | truncateTitleDesc}}</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <div *ngIf="data['volumeInfo'].imageLinks" class="row">
+                            <img class="imageSize" [src]="data['volumeInfo'].imageLinks.thumbnail">
+                        </div>
+                        <div *ngIf="!data['volumeInfo'].imageLinks" class="row">
+                            <img class="imageSize" src="../assets/no_image_available.jpeg">
+                        </div>
+                    </div>
+                    <div class="col-xs-9">
+                        <div *ngIf="data['volumeInfo'].title" class="row">
+                            <div class="col-xs-4">
+                                Title:
+                            </div>
+                            <div class="col-xs-8">
+                                {{data['volumeInfo'].title | truncateTitleDesc}}
+                            </div>
+                        </div>
+                        <div *ngIf="data['volumeInfo'].description" class="row">
+                            <div class="col-xs-4">
+                                Description:
+                            </div>
+                            <div class="col-xs-8">
+                                {{data['volumeInfo'].description | truncateDesc}}
+                            </div>
+                        </div>
+                        <div *ngIf="data['volumeInfo'].authors" class="row">
+                            <div class="col-xs-4">
+                                Author:
+                            </div>
+                            <div class="col-xs-8">
+                                {{data['volumeInfo'].authors}}
+                            </div>
+                        </div>
+                        <div *ngIf="data['volumeInfo'].averageRating" class="row">
+                            <div *ngIf="data['volumeInfo'].averageRating" class="col-xs-4">
+                                Rating:
+                            </div>
+                            <div class="col-xs-8">
+                                {{data['volumeInfo'].averageRating}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <button class="col-md-3 col-md-offset-8 btn btn-primary" (click)='bookDetails(data)'>View Details</button>
+            </div>
+        </div>
+    </div>
+</body>

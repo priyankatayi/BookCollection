@@ -1,0 +1,124 @@
+/* You can add global styles to this file, and also import other style files */
+.bodyPadding{   
+    padding-left:80px;
+}
+.verticalAlign{   
+    display: inline-block;    
+}
+.centerAlign{ 
+    margin: auto;
+    width: 45%;
+    margin-bottom: 20px;  
+    margin-right:20px; 
+    align-items: center;   
+}
+.bookDetailsAlign{ 
+    margin: auto;
+    width: 50%;
+    margin-bottom: 20px;      
+}
+.rightSide{
+    float: right;
+}
+.pointerCursor{
+    cursor: pointer;
+}
+.imageSize{
+    height: 180px;
+    width: 129px;
+
+}
+/*navigation*/
+header .navbar {
+    padding:10px 0;
+    transition: all .5s ease-out;
+}
+header .navbar-inverse {
+    border:0;
+    background-color: #337ab7
+}
+header .navbar-inverse .navbar-nav a {
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0;
+    padding: 1em 1em 1em 1em;
+    height: 100%;
+    line-height: 1em;
+    font-size: 0.9 em;
+    display: block;
+    letter-spacing: 0.7px;
+    font-weight:700;
+    font-family: 'Calibri'
+}
+header .navbar-inverse .navbar-nav a:hover {
+    background:transparent;
+    color:gold;
+    font-weight:600;
+}
+header .navbar-inverse .navbar-nav .active a {
+    background:transparent;
+    color:gold;
+    font-weight:700;
+    border-bottom: 4px solid gold;
+    text-shadow: none;
+}
+header .navbar-inverse .navbar-nav .active a:hover{
+    color:gold;
+    background:transparent;
+    text-shadow: none;
+    border:0;
+}
+
+header .navbar-inverse .navbar-nav .active a:focus{
+    color:gold;
+    background:transparent;
+    text-shadow: none;
+    border:0;
+}
+header .navbar-toggle {
+    background-color: #3399CC;
+}
+
+
+@media (max-width: 1200px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav li {
+        float: none;
+    }
+    .navbar-nav li a {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    .collapse.in{
+        display:block !important;
+
+    }
+    .navbar-collapse.in {
+        overflow-y: hidden !important;
+    }
+}
+.alert {
+    margin-left: 30px !important;
+    margin-right: 30px !important;
+ }
+    

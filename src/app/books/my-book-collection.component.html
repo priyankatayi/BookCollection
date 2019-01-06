@@ -1,0 +1,76 @@
+<div *ngIf="favBooks" class="jumbotron" style="text-align:center">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <h4 style="color:#337ab7;padding-top:20px;text-align:center">My Books Collection</h4>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="errorMsg" class="alert alert-danger fade in">
+    <a href="#" class="close" data-dismiss="alert">&times;</a>
+    <strong>Error!</strong> {{errorMsg}}
+  </div>
+</div>
+
+<body class="bodyPadding">
+  <div *ngIf="favBooks">
+    <div *ngFor="let book of favBooks" class="panel panel-primary centerAlign verticalAlign">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{book.title | truncateTitleDesc}}</h3>
+      </div>
+      <div class="panel-body">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-3">
+              <div *ngIf="book.image && book.image != 'N/A'" class="row">
+                <img class="imageSize" [src]="book.image">
+              </div>
+              <div *ngIf="book.image == 'N/A'" class="row">
+                <img class="imageSize" src="../assets/no_image_available.jpeg">
+              </div>
+            </div>
+            <div class="col-xs-9">
+              <div *ngIf="book.title" class="row">
+                <div class="col-xs-4">
+                  Title:
+                </div>
+                <div class="col-xs-8">
+                  {{book.title | truncateTitleDesc}}
+                </div>
+              </div>
+              <div *ngIf="book.description" class="row">
+                <div class="col-xs-4">
+                  Description:
+                </div>
+                <div class="col-xs-8">
+                  {{book.description | truncateDesc}}
+                </div>
+              </div>
+              <div *ngIf="book.authors" class="row">
+                <div class="col-xs-4">
+                  Author:
+                </div>
+                <div class="col-xs-8">
+                  {{book.authors}}
+                </div>
+              </div>
+              <div *ngIf="book.averageRating" class="row">
+                <div *ngIf="book.averageRating" class="col-xs-4">
+                  Rating:
+                </div>
+                <div class="col-xs-8">
+                  {{book.averageRating}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <div class="row">
+          <button class="col-md-5 col-md-offset-6 btn btn-primary" (click)="removeFromCollection(book.key)">Remove from my collection</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

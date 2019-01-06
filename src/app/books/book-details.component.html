@@ -1,0 +1,74 @@
+<div class="jumbotron">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <h4 style="color:#337ab7;padding-top:20px;text-align:center">{{bookDetails? bookDetails['volumeInfo'].title: 'Book Details Not Found!'}}</h4>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="errorMsg" class="alert alert-danger fade in">
+    <a href="#" class="close" data-dismiss="alert">&times;</a>
+    <strong>Error!</strong> {{errorMsg}}
+</div>
+<body class="bodyPadding">
+    <div *ngIf="bookDetails" class="panel panel-primary bookDetailsAlign">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{bookDetails['volumeInfo'].title}}</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-3" *ngIf="bookDetails['volumeInfo'].imageLinks">
+                        <div class="row">
+                            <img [src]="bookDetails['volumeInfo'].imageLinks.thumbnail">
+                        </div>
+                    </div>
+                    <div class="col-xs-3" *ngIf="!bookDetails['volumeInfo'].imageLinks">
+                        <div class="row">
+                            <img class="imageSize" src="../assets/no_image_available.jpeg">
+                        </div>
+                    </div>
+                    <div class="col-xs-9">
+                        <div *ngIf="bookDetails['volumeInfo'].title" class="row">
+                            <div class="col-xs-4">
+                                Title:
+                            </div>
+                            <div class="col-xs-8">
+                                {{bookDetails['volumeInfo'].title}}
+                            </div>
+                        </div>
+                        <div *ngIf="bookDetails['volumeInfo'].description" class="row">
+                            <div class="col-xs-4">
+                                Description:
+                            </div>
+                            <div class="col-xs-8">
+                                {{bookDetails['volumeInfo'].description}}
+                            </div>
+                        </div>
+                        <div *ngIf="bookDetails['volumeInfo'].authors" class="row">
+                            <div class="col-xs-4">
+                                Author:
+                            </div>
+                            <div class="col-xs-8">
+                                {{bookDetails['volumeInfo'].authors}}
+                            </div>
+                        </div>
+                        <div *ngIf="bookDetails['volumeInfo'].averageRating" class="row">
+                            <div class="col-xs-4">
+                                Rating:
+                            </div>
+                            <div class="col-xs-8">
+                                {{bookDetails['volumeInfo'].averageRating}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button class="btn btn-primary" [routerLink]="['/browse']" queryParamsHandling="preserve">Back to List</button>
+            <button class="btn btn-primary pull-right" (click)="addToCollection(bookDetails)">Add to my collection</button>
+        </div>
+    </div>
+</body>
