@@ -1,6 +1,7 @@
-# Book Collection Application 
+#  Application : Book Collection 
 
 As part of this project, I have developed an application with below functionality:
+
 **1. Browse Books**
 - Based on the keyword provided in search, it would fetch data from Google Books API and display the list of books that matches the keyword.
 - The user can click on a particular book from the search results to view its full information.
