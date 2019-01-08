@@ -1,27 +1,32 @@
-# Angular5Firebase
+# Book Collection Application 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.8.
+As part of this project, I have developed an application with below functionality:
+**1. Browse Books**
+- Based on the keyword provided in search, it would fetch data from Google Books API and display the list of books that matches the keyword.
+- The user can click on a particular book from the search results to view its full information.
+- User can then add that particular book to his collection or go back to the search results.
 
-## Development server
+**2. My Collection**
+- Based on the search results, the user can add a book to his collection (Writes the data into database).
+- My collection tab displays the list of books that were added to his collection (Reads the data from database).
+- He can also remove a book from his collection (Deletes the data from database).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+**Concepts Used**: Conatainer and Nested Components, Routing, Dependency Injection, Lifecyle hooks, Custom Pipes, services, CanActivate Guard, Error Handling, Input and Output properties, HTTP Client, setter and getter metthods
 
-## Code scaffolding
+### Project Environment:
+Environment | Technology
+------------ | -------------
+Frameworks | Bootstrap
+Programming languages | Angular
+Version control/code repositories | GIT
+command line interface | Angular CLI
+Database| Firebase
+ API| Google Books API
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+#### Steps to Run the Program:
+1. Download from the below Repository.
+* Code Repository: [https://github.com/priyankatayi/BookCollection.git]
+Or
+* Open the URL: [https://bookcollection-343c1.firebaseapp.com]
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
